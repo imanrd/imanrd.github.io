@@ -1,1 +1,11 @@
-theme: jekyll-theme-sphinx_rtd_theme
+lsi: false
+safe: true
+source: imanrd.github.io
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+theme: jekyll-theme-sphinx-rtd-theme
