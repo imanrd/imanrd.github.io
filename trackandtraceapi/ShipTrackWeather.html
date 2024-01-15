@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShipTrackWeather package &mdash; TrackandTraceAPI 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8d563738"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ShipTrackWeather.management package" href="ShipTrackWeather.management.html" />
+    <link rel="prev" title="TrackandTraceAPI" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            TrackandTraceAPI
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">TrackandTraceAPI</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ShipTrackWeather package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ShipTrackWeather.management.html">ShipTrackWeather.management package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ShipTrackWeather.migrations.html">ShipTrackWeather.migrations package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ShipTrackWeather.admin">ShipTrackWeather.admin module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ShipTrackWeather.apps">ShipTrackWeather.apps module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ShipTrackWeather.apps.ShiptrackweatherConfig"><code class="docutils literal notranslate"><span class="pre">ShiptrackweatherConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ShipTrackWeather.models">ShipTrackWeather.models module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ShipTrackWeather.models.Article"><code class="docutils literal notranslate"><span class="pre">Article</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ShipTrackWeather.models.Shipment"><code class="docutils literal notranslate"><span class="pre">Shipment</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ShipTrackWeather.queries">ShipTrackWeather.queries module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ShipTrackWeather.queries.get_shipment_by_tracking_number_and_carrier"><code class="docutils literal notranslate"><span class="pre">get_shipment_by_tracking_number_and_carrier()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ShipTrackWeather.serializers">ShipTrackWeather.serializers module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ShipTrackWeather.serializers.TrackingCarrierSerializer"><code class="docutils literal notranslate"><span class="pre">TrackingCarrierSerializer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ShipTrackWeather.swagger">ShipTrackWeather.swagger module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ShipTrackWeather.tests">ShipTrackWeather.tests module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ShipTrackWeather.tests.ShipmentRetrievalTestCase"><code class="docutils literal notranslate"><span class="pre">ShipmentRetrievalTestCase</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ShipTrackWeather.tests.WeatherShipmentViewTestCase"><code class="docutils literal notranslate"><span class="pre">WeatherShipmentViewTestCase</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ShipTrackWeather.views">ShipTrackWeather.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ShipTrackWeather.views.WeatherShipmentView"><code class="docutils literal notranslate"><span class="pre">WeatherShipmentView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ShipTrackWeather.views.get_receiver_city"><code class="docutils literal notranslate"><span class="pre">get_receiver_city()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ShipTrackWeather.views.home_page"><code class="docutils literal notranslate"><span class="pre">home_page()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ShipTrackWeather.weather_utils">ShipTrackWeather.weather_utils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ShipTrackWeather.weather_utils.WeatherService"><code class="docutils literal notranslate"><span class="pre">WeatherService</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ShipTrackWeather">Module contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ShipTrackWeather.log_creator"><code class="docutils literal notranslate"><span class="pre">log_creator()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="TrackandTraceAPI.html">TrackandTraceAPI package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">TrackandTraceAPI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">TrackandTraceAPI</a></li>
+      <li class="breadcrumb-item active">ShipTrackWeather package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ShipTrackWeather.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="shiptrackweather-package">
+<h1>ShipTrackWeather package<a class="headerlink" href="#shiptrackweather-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ShipTrackWeather.management.html">ShipTrackWeather.management package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ShipTrackWeather.management.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ShipTrackWeather.management.commands.html">ShipTrackWeather.management.commands package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ShipTrackWeather.management.commands.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ShipTrackWeather.management.commands.html#module-ShipTrackWeather.management.commands.import_data">ShipTrackWeather.management.commands.import_data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ShipTrackWeather.management.commands.html#module-ShipTrackWeather.management.commands">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ShipTrackWeather.management.html#module-ShipTrackWeather.management">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ShipTrackWeather.migrations.html">ShipTrackWeather.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ShipTrackWeather.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ShipTrackWeather.migrations.html#module-ShipTrackWeather.migrations.0001_initial">ShipTrackWeather.migrations.0001_initial module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ShipTrackWeather.migrations.html#ShipTrackWeather.migrations.0001_initial.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ShipTrackWeather.migrations.html#ShipTrackWeather.migrations.0001_initial.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ShipTrackWeather.migrations.html#ShipTrackWeather.migrations.0001_initial.Migration.initial"><code class="docutils literal notranslate"><span class="pre">Migration.initial</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ShipTrackWeather.migrations.html#ShipTrackWeather.migrations.0001_initial.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ShipTrackWeather.migrations.html#module-ShipTrackWeather.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-ShipTrackWeather.admin">
+<span id="shiptrackweather-admin-module"></span><h2>ShipTrackWeather.admin module<a class="headerlink" href="#module-ShipTrackWeather.admin" title="Link to this heading"></a></h2>
+</section>
+<section id="module-ShipTrackWeather.apps">
+<span id="shiptrackweather-apps-module"></span><h2>ShipTrackWeather.apps module<a class="headerlink" href="#module-ShipTrackWeather.apps" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ShipTrackWeather.apps.ShiptrackweatherConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ShipTrackWeather.apps.</span></span><span class="sig-name descname"><span class="pre">ShiptrackweatherConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ShipTrackWeather/apps.html#ShiptrackweatherConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.apps.ShiptrackweatherConfig" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ShipTrackWeather.apps.ShiptrackweatherConfig.default_auto_field">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#ShipTrackWeather.apps.ShiptrackweatherConfig.default_auto_field" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ShipTrackWeather.apps.ShiptrackweatherConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ShipTrackWeather'</span></em><a class="headerlink" href="#ShipTrackWeather.apps.ShiptrackweatherConfig.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ShipTrackWeather.models">
+<span id="shiptrackweather-models-module"></span><h2>ShipTrackWeather.models module<a class="headerlink" href="#module-ShipTrackWeather.models" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ShipTrackWeather.models.Article">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ShipTrackWeather.models.</span></span><span class="sig-name descname"><span class="pre">Article</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ShipTrackWeather/models.html#Article"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.models.Article" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Model representing an article.</p>
+<p>Attributes:
+- shipment (ForeignKey): ForeignKey to Shipment model.
+- article_name (CharField): Name of the article.
+- article_quantity (IntegerField): Quantity of the article.
+- article_price (DecimalField): Price of the article.
+- SKU (CharField): Stock Keeping Unit of the article.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="ShipTrackWeather.models.Article.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#ShipTrackWeather.models.Article.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="ShipTrackWeather.models.Article.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#ShipTrackWeather.models.Article.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ShipTrackWeather.models.Article.SKU">
+<span class="sig-name descname"><span class="pre">SKU</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ShipTrackWeather.models.Article.SKU" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ShipTrackWeather.models.Article.article_name">
+<span class="sig-name descname"><span class="pre">article_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ShipTrackWeather.models.Article.article_name" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ShipTrackWeather.models.Article.article_price">
+<span class="sig-name descname"><span class="pre">article_price</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ShipTrackWeather.models.Article.article_price" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ShipTrackWeather.models.Article.article_quantity">
+<span class="sig-name descname"><span class="pre">article_quantity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ShipTrackWeather.models.Article.article_quantity" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ShipTrackWeather.models.Article.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#ShipTrackWeather.models.Article.id" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ShipTrackWeather.models.Article.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#ShipTrackWeather.models.Article.objects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ShipTrackWeather.models.Article.shipment">
+<span class="sig-name descname"><span class="pre">shipment</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#ShipTrackWeather.models.Shipment" title="ShipTrackWeather.models.Shipment"><span class="pre">Shipment</span></a></em><a class="headerlink" href="#ShipTrackWeather.models.Article.shipment" title="Link to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ShipTrackWeather.models.Article.shipment_id">
+<span class="sig-name descname"><span class="pre">shipment_id</span></span><a class="headerlink" href="#ShipTrackWeather.models.Article.shipment_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ShipTrackWeather.models.Shipment">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ShipTrackWeather.models.</span></span><span class="sig-name descname"><span class="pre">Shipment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ShipTrackWeather/models.html#Shipment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.models.Shipment" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Model representing a shipment.</p>
+<p>Attributes:
+- tracking_number (CharField): Tracking number for the shipment.
+- carrier (CharField): Carrier information for the shipment.
+- sender_address (TextField): Address of the sender.
+- receiver_address (TextField): Address of the receiver.
+- status (CharField): Status of the shipment.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="ShipTrackWeather.models.Shipment.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#ShipTrackWeather.models.Shipment.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="ShipTrackWeather.models.Shipment.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#ShipTrackWeather.models.Shipment.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ShipTrackWeather.models.Shipment.article_set">
+<span class="sig-name descname"><span class="pre">article_set</span></span><a class="headerlink" href="#ShipTrackWeather.models.Shipment.article_set" title="Link to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ShipTrackWeather.models.Shipment.carrier">
+<span class="sig-name descname"><span class="pre">carrier</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ShipTrackWeather.models.Shipment.carrier" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ShipTrackWeather.models.Shipment.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#ShipTrackWeather.models.Shipment.id" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ShipTrackWeather.models.Shipment.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#ShipTrackWeather.models.Shipment.objects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ShipTrackWeather.models.Shipment.receiver_address">
+<span class="sig-name descname"><span class="pre">receiver_address</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ShipTrackWeather.models.Shipment.receiver_address" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ShipTrackWeather.models.Shipment.sender_address">
+<span class="sig-name descname"><span class="pre">sender_address</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ShipTrackWeather.models.Shipment.sender_address" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ShipTrackWeather.models.Shipment.status">
+<span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ShipTrackWeather.models.Shipment.status" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ShipTrackWeather.models.Shipment.tracking_number">
+<span class="sig-name descname"><span class="pre">tracking_number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ShipTrackWeather.models.Shipment.tracking_number" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ShipTrackWeather.queries">
+<span id="shiptrackweather-queries-module"></span><h2>ShipTrackWeather.queries module<a class="headerlink" href="#module-ShipTrackWeather.queries" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ShipTrackWeather.queries.get_shipment_by_tracking_number_and_carrier">
+<span class="sig-prename descclassname"><span class="pre">ShipTrackWeather.queries.</span></span><span class="sig-name descname"><span class="pre">get_shipment_by_tracking_number_and_carrier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tracking_number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">carrier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ShipTrackWeather.models.Shipment" title="ShipTrackWeather.models.Shipment"><span class="pre">Shipment</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/ShipTrackWeather/queries.html#get_shipment_by_tracking_number_and_carrier"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.queries.get_shipment_by_tracking_number_and_carrier" title="Link to this definition"></a></dt>
+<dd><p>Retrieves shipments based on tracking number and carrier, with associated article names.</p>
+<p>Args:
+- tracking_number (str): The tracking number to search for.
+- carrier (str): The carrier to search for.</p>
+<p>Returns:
+- Shipment or None: QuerySet of shipments if found, else None.</p>
+</dd></dl>
+
+</section>
+<section id="module-ShipTrackWeather.serializers">
+<span id="shiptrackweather-serializers-module"></span><h2>ShipTrackWeather.serializers module<a class="headerlink" href="#module-ShipTrackWeather.serializers" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ShipTrackWeather.serializers.TrackingCarrierSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ShipTrackWeather.serializers.</span></span><span class="sig-name descname"><span class="pre">TrackingCarrierSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ShipTrackWeather/serializers.html#TrackingCarrierSerializer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.serializers.TrackingCarrierSerializer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Serializer</span></code></p>
+</dd></dl>
+
+</section>
+<section id="module-ShipTrackWeather.swagger">
+<span id="shiptrackweather-swagger-module"></span><h2>ShipTrackWeather.swagger module<a class="headerlink" href="#module-ShipTrackWeather.swagger" title="Link to this heading"></a></h2>
+</section>
+<section id="module-ShipTrackWeather.tests">
+<span id="shiptrackweather-tests-module"></span><h2>ShipTrackWeather.tests module<a class="headerlink" href="#module-ShipTrackWeather.tests" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ShipTrackWeather.tests.ShipmentRetrievalTestCase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ShipTrackWeather.tests.</span></span><span class="sig-name descname"><span class="pre">ShipmentRetrievalTestCase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ShipTrackWeather/tests.html#ShipmentRetrievalTestCase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.tests.ShipmentRetrievalTestCase" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ShipTrackWeather.tests.ShipmentRetrievalTestCase.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ShipTrackWeather/tests.html#ShipmentRetrievalTestCase.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.tests.ShipmentRetrievalTestCase.setUp" title="Link to this definition"></a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ShipTrackWeather.tests.ShipmentRetrievalTestCase.test_get_shipment_by_tracking_number_and_carrier">
+<span class="sig-name descname"><span class="pre">test_get_shipment_by_tracking_number_and_carrier</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ShipTrackWeather/tests.html#ShipmentRetrievalTestCase.test_get_shipment_by_tracking_number_and_carrier"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.tests.ShipmentRetrievalTestCase.test_get_shipment_by_tracking_number_and_carrier" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ShipTrackWeather.tests.ShipmentRetrievalTestCase.test_get_shipment_nonexistent">
+<span class="sig-name descname"><span class="pre">test_get_shipment_nonexistent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ShipTrackWeather/tests.html#ShipmentRetrievalTestCase.test_get_shipment_nonexistent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.tests.ShipmentRetrievalTestCase.test_get_shipment_nonexistent" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ShipTrackWeather.tests.WeatherShipmentViewTestCase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ShipTrackWeather.tests.</span></span><span class="sig-name descname"><span class="pre">WeatherShipmentViewTestCase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ShipTrackWeather/tests.html#WeatherShipmentViewTestCase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.tests.WeatherShipmentViewTestCase" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APITestCase</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ShipTrackWeather.tests.WeatherShipmentViewTestCase.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ShipTrackWeather/tests.html#WeatherShipmentViewTestCase.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.tests.WeatherShipmentViewTestCase.setUp" title="Link to this definition"></a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ShipTrackWeather.tests.WeatherShipmentViewTestCase.test_get_request">
+<span class="sig-name descname"><span class="pre">test_get_request</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ShipTrackWeather/tests.html#WeatherShipmentViewTestCase.test_get_request"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.tests.WeatherShipmentViewTestCase.test_get_request" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ShipTrackWeather.tests.WeatherShipmentViewTestCase.test_post_request">
+<span class="sig-name descname"><span class="pre">test_post_request</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ShipTrackWeather/tests.html#WeatherShipmentViewTestCase.test_post_request"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.tests.WeatherShipmentViewTestCase.test_post_request" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ShipTrackWeather.views">
+<span id="shiptrackweather-views-module"></span><h2>ShipTrackWeather.views module<a class="headerlink" href="#module-ShipTrackWeather.views" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ShipTrackWeather.views.WeatherShipmentView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ShipTrackWeather.views.</span></span><span class="sig-name descname"><span class="pre">WeatherShipmentView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ShipTrackWeather/views.html#WeatherShipmentView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.views.WeatherShipmentView" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APIView</span></code></p>
+<p>View for retrieving weather and shipment data.</p>
+<p>Attributes:
+- template_name (str): Name of the HTML template.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ShipTrackWeather.views.WeatherShipmentView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HttpRequest</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">HttpResponse</span></span></span><a class="reference internal" href="_modules/ShipTrackWeather/views.html#WeatherShipmentView.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.views.WeatherShipmentView.get" title="Link to this definition"></a></dt>
+<dd><p>Handles GET requests for the weather shipment view.</p>
+<p>Args:
+- request: HTTP request object.</p>
+<p>Returns:
+- HttpResponse: Rendered HTML template.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ShipTrackWeather.views.WeatherShipmentView.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HttpRequest</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">HttpResponse</span></span></span><a class="reference internal" href="_modules/ShipTrackWeather/views.html#WeatherShipmentView.post"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.views.WeatherShipmentView.post" title="Link to this definition"></a></dt>
+<dd><p>Handles POST requests to retrieve weather and shipment data.</p>
+<p>Args:
+- request: HTTP request object.</p>
+<p>Returns:
+- HttpResponse: Rendered HTML template with weather and shipment data.</p>
+<p>This method processes POST requests to retrieve weather and shipment data based on the input provided. It
+expects a payload containing ‘tracking_number’ and ‘carrier’ fields. If the request is made from the Swagger
+UI, it allows default values (‘TN12345680’ for tracking number and ‘DPD’ for the carrier) to be used if no
+input is provided. The method fetches shipment details and location information based on the provided
+tracking number and carrier, then fetches weather data for that location. Finally, it renders an HTML
+template with the retrieved weather and shipment data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ShipTrackWeather.views.WeatherShipmentView.render_template">
+<span class="sig-name descname"><span class="pre">render_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HttpRequest</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">HttpResponse</span></span></span><a class="reference internal" href="_modules/ShipTrackWeather/views.html#WeatherShipmentView.render_template"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.views.WeatherShipmentView.render_template" title="Link to this definition"></a></dt>
+<dd><p>Renders the HTML template.</p>
+<p>Args:
+- request: HTTP request object.</p>
+<p>Returns:
+- HttpResponse: Rendered HTML template.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ShipTrackWeather.views.WeatherShipmentView.template_name">
+<span class="sig-name descname"><span class="pre">template_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'weather_shipment.html'</span></em><a class="headerlink" href="#ShipTrackWeather.views.WeatherShipmentView.template_name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ShipTrackWeather.views.get_receiver_city">
+<span class="sig-prename descclassname"><span class="pre">ShipTrackWeather.views.</span></span><span class="sig-name descname"><span class="pre">get_receiver_city</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shipments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/ShipTrackWeather/views.html#get_receiver_city"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.views.get_receiver_city" title="Link to this definition"></a></dt>
+<dd><p>Extracts the city from the receiver address of the first shipment.</p>
+<p>Args:
+- shipments: QuerySet of shipments.</p>
+<p>Returns:
+- str: City name extracted from the receiver address.</p>
+<p>Raises:
+- Exception: If no shipments are available or receiver address is missing.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ShipTrackWeather.views.home_page">
+<span class="sig-prename descclassname"><span class="pre">ShipTrackWeather.views.</span></span><span class="sig-name descname"><span class="pre">home_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HttpRequest</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">HttpResponse</span></span></span><a class="reference internal" href="_modules/ShipTrackWeather/views.html#home_page"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.views.home_page" title="Link to this definition"></a></dt>
+<dd><p>Renders the home page.</p>
+<p>Args:
+- request: HTTP request object.</p>
+<p>Returns:
+- HttpResponse: Rendered HTML template for the home page.</p>
+</dd></dl>
+
+</section>
+<section id="module-ShipTrackWeather.weather_utils">
+<span id="shiptrackweather-weather-utils-module"></span><h2>ShipTrackWeather.weather_utils module<a class="headerlink" href="#module-ShipTrackWeather.weather_utils" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ShipTrackWeather.weather_utils.WeatherService">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ShipTrackWeather.weather_utils.</span></span><span class="sig-name descname"><span class="pre">WeatherService</span></span><a class="reference internal" href="_modules/ShipTrackWeather/weather_utils.html#WeatherService"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.weather_utils.WeatherService" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides methods to fetch weather data using an external API and configuration settings.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ShipTrackWeather.weather_utils.WeatherService.CONFIG_FILE">
+<span class="sig-name descname"><span class="pre">CONFIG_FILE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'environment.ini'</span></em><a class="headerlink" href="#ShipTrackWeather.weather_utils.WeatherService.CONFIG_FILE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ShipTrackWeather.weather_utils.WeatherService.get_weather_data">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_weather_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">section</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'API'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/ShipTrackWeather/weather_utils.html#WeatherService.get_weather_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.weather_utils.WeatherService.get_weather_data" title="Link to this definition"></a></dt>
+<dd><p>Fetches weather data for a given location using an external API.</p>
+<dl>
+<dt>Parameters:</dt><dd><p>location (str): The location for which weather data is requested.
+section (str, optional): The section name in the configuration file containing API settings.</p>
+<blockquote>
+<div><p>Default is “API”.</p>
+</div></blockquote>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>dict or None: Weather data as a dictionary or None if the API request was unsuccessful</dt><dd><p>or configuration settings are missing.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ShipTrackWeather.weather_utils.WeatherService.read_config">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ConfigParser</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/ShipTrackWeather/weather_utils.html#WeatherService.read_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.weather_utils.WeatherService.read_config" title="Link to this definition"></a></dt>
+<dd><p>Reads the configuration settings from the specified configuration file.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>ConfigParser or None: Configuration settings or None if an exception occurs during parsing.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ShipTrackWeather">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-ShipTrackWeather" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ShipTrackWeather.log_creator">
+<span class="sig-prename descclassname"><span class="pre">ShipTrackWeather.</span></span><span class="sig-name descname"><span class="pre">log_creator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ShipTrackWeather.html#log_creator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ShipTrackWeather.log_creator" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="TrackandTraceAPI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ShipTrackWeather.management.html" class="btn btn-neutral float-right" title="ShipTrackWeather.management package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Iman Rezaeian.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
