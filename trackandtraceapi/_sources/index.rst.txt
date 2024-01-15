@@ -1,0 +1,44 @@
+.. TrackandTraceAPI documentation master file, created by
+   sphinx-quickstart on Fri Jan 12 10:56:13 2024.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to TrackandTraceAPI's documentation!
+============================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   modules.rst
+.. _running-the-project:
+
+Running the Project
+===================
+
+This section provides instructions on how to run the project locally.
+
+.. note::
+
+    Make sure you have all the required dependencies installed before running the project.
+
+.. code-block:: bash
+
+    # Install dependencies
+    pip install -r requirements.txt
+
+    # Run migrations
+    python manage.py migrate
+
+    #Import data.csv
+    python manage.py import_data
+
+    # Start the development server
+    python manage.py runserver
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

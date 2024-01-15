@@ -1,0 +1,18 @@
+ShipTrackWeather.management package
+===================================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   ShipTrackWeather.management.commands
+
+Module contents
+---------------
+
+.. automodule:: ShipTrackWeather.management
+   :members:
+   :undoc-members:
+   :show-inheritance:

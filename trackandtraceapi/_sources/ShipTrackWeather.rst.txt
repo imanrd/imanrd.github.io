@@ -1,0 +1,94 @@
+ShipTrackWeather package
+========================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   ShipTrackWeather.management
+   ShipTrackWeather.migrations
+
+Submodules
+----------
+
+ShipTrackWeather.admin module
+-----------------------------
+
+.. automodule:: ShipTrackWeather.admin
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ShipTrackWeather.apps module
+----------------------------
+
+.. automodule:: ShipTrackWeather.apps
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ShipTrackWeather.models module
+------------------------------
+
+.. automodule:: ShipTrackWeather.models
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ShipTrackWeather.queries module
+-------------------------------
+
+.. automodule:: ShipTrackWeather.queries
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ShipTrackWeather.serializers module
+-----------------------------------
+
+.. automodule:: ShipTrackWeather.serializers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ShipTrackWeather.swagger module
+-------------------------------
+
+.. automodule:: ShipTrackWeather.swagger
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ShipTrackWeather.tests module
+-----------------------------
+
+.. automodule:: ShipTrackWeather.tests
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ShipTrackWeather.views module
+-----------------------------
+
+.. automodule:: ShipTrackWeather.views
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ShipTrackWeather.weather\_utils module
+--------------------------------------
+
+.. automodule:: ShipTrackWeather.weather_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: ShipTrackWeather
+   :members:
+   :undoc-members:
+   :show-inheritance:
